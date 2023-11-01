@@ -3,5 +3,5 @@
 WordPress Theme
 
 * Developer: Lisa DeBona
-* Date Created: 05.08.2023
-* Last Modified: 05.10.2023
+* Date Created: 11.01.2023
+* Last Modified: 11.01.2023

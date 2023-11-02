@@ -1491,11 +1491,11 @@ body{font-family:"Roboto",sans-serif;font-size:17px;line-height:1.4}
 .intro-section.half .videoFrame{max-width:unset;width:40%;padding:0;margin:0}
 .intro-section.half .videoText{width:55%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 body.home #content{position:relative;z-index:20;background-color:#f3d3b2;color:#122304}
-.films-section{position:relative;padding-top:50px;padding-bottom:250px;z-index:10}
+.films-section{position:relative;padding-top:50px;padding-bottom:20vw;z-index:10}
 .films-section:before{content:"";display:block;width:100%;height:50px;background-image:url("images/grass.png");background-position:bottom center;background-repeat:repeat-x;background-size:contain;position:absolute;top:-48px;left:0}
 .films-section .forest{position:absolute;left:0;bottom:0;width:100%}
 .films-section .forest:before{content:"";display:block;width:7vw;height:7vw;background-image:url("images/bird.png");background-position:bottom center;background-repeat:no-repeat;background-size:contain;position:absolute;left:20vw;bottom:7vw}
-.films-section .forest:after{content:"";display:block;width:36vw;height:36vw;background-image:url("images/trees.png");background-position:bottom center;background-repeat:no-repeat;background-size:contain;position:absolute;right:5vw;bottom:-2vw}
+.films-section .forest:after{content:"";display:block;width:35vw;height:35vw;background-image:url("images/trees.png");background-position:bottom center;background-repeat:no-repeat;background-size:contain;position:absolute;right:5vw;bottom:-2vw}
 .films-section .film-info{margin:50px 0}
 .films-section .film-info .videoFrame{margin:0;position:relative;float:left;background-color:#000}
 .films-section .film-info .videoFrame img.resizer{width:100%;height:auto;float:left}
@@ -1523,7 +1523,10 @@ body.home #content{position:relative;z-index:20;background-color:#f3d3b2;color:#
 .featured-items-section:before{content:"";display:block;width:100%;height:80px;background-image:url("images/grass-dark.png");background-position:bottom center;background-repeat:repeat-x;background-size:contain;position:absolute;top:-75px;left:0}
 .featured-items-section .category{text-transform:uppercase;font-size:18px;font-weight:bold;line-height:1.2;color:#ff4800;margin-bottom:20px}
 .featured-items-section h2{margin:0 0 30px}
-@media screen and (max-width:1024px){.home-banner{height:380px}
+@media screen and (min-width:1400px){.films-section{padding-bottom:250px}
+.films-section .forest:before{width:120px;height:120px}
+.films-section .forest:after{width:600px;height:600px}
+}@media screen and (max-width:1024px){.home-banner{height:380px}
 }@media(print),(prefers-reduced-motion:reduce){.animated{-webkit-animation-duration:1ms !important;animation-duration:1ms !important;-webkit-transition-duration:1ms !important;transition-duration:1ms !important;-webkit-animation-iteration-count:1 !important;animation-iteration-count:1 !important}
 }@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}
 100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}

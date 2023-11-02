@@ -316,8 +316,11 @@ body.home #content {
 .films-section {
   position: relative;
   padding-top: 50px;
-  padding-bottom: 250px;
+  padding-bottom: 20vw;
   z-index: 10;
+  @media screen and (min-width: 1400px) {
+    padding-bottom: 250px;
+  }
   &:before {
     content:"";
     display: block;
@@ -348,12 +351,16 @@ body.home #content {
       position: absolute;
       left: 20vw;
       bottom: 7vw;
+      @media screen and (min-width: 1400px) {
+        width: 120px;
+        height: 120px;
+      }
     }
     &:after {
       content:"";
       display: block;
-      width: 36vw;
-      height: 36vw;
+      width: 35vw;
+      height: 35vw;
       background-image: url('images/trees.png');
       background-position: bottom center;
       background-repeat: no-repeat;
@@ -361,6 +368,10 @@ body.home #content {
       position: absolute;
       right: 5vw;
       bottom: -2vw;
+      @media screen and (min-width: 1400px) {
+        width: 600px;
+        height: 600px;
+      }
     }
   }
   .film-info {

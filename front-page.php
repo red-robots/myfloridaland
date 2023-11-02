@@ -40,5 +40,73 @@ get_header();
 
 <?php endwhile; ?>
 
+  <?php  
+  $perpage = ( get_field('num_items_films') ) ? get_field('num_items_films') : 3;
+  $args = array(
+    'posts_per_page'=> $perpage,
+    'post_type'   => 'films',
+    'post_status' => 'publish'
+  );
+  $films = new WP_Query($args);
+  if ( $films->have_posts() ) { ?>
+  <section class="films-section">
+    <div class="wrapper">
+      <div class="flex-wrap">
+        <?php while ( $films->have_posts() ) : $films->the_post(); ?>
+          <?php  
+          $small_title = get_field('small_title');
+          $video_thumb = get_field('video_thumbnail');
+          $video_link = get_field('video_link');
+          $video_description = get_field('video_description');
+          $section_class = ( $video_thumb  && $video_link && $video_description ) ? 'half':'full';
+          ?>
+          <div class="film-info <?php echo $section_class ?>">
+            <div class="flex-wrap">
+            <?php if ( $video_thumb  && $video_link ) { ?>
+             <figure class="videoFrame">
+               <a href="<?php echo $video_link ?>" class="videoLink videopopup" data-fancybox="video">
+                 <span class="videoImage" style="background-image:url('<?php echo $video_thumb['url'] ?>')"></span>
+                 <span class="player-button"></span>
+                 <img src="<?php echo THEMEURI ?>/images/video-helper.png" class="resizer" alt="">
+               </a>
+             </figure> 
+            <?php } ?>
+
+            <?php if ( $video_description ) { ?>
+             <div class="videoText">
+                <div class="inside">
+                  <div class="titlediv">
+                  <?php if($small_title) { ?>
+                    <div class="infotype"><?php echo $small_title ?></div>
+                  <?php } ?>
+                    <h3 class="infotitle"><?php echo get_the_title() ?></h3>
+                  </div>
+                  <div class="infotext">
+                    <?php echo $video_description ?>
+                    <p class="link"><a href="<?php echo $video_link ?>" class="videopopup" data-fancybox="video">Click to Watch Video</a></p>    
+                  </div>
+                </div>
+             </div>
+            <?php } ?>
+            </div>
+          </div>
+        <?php endwhile; wp_reset_postdata(); ?>
+      </div>
+    </div>
+    <div class="forest"></div>
+  </section>
+  <?php } ?>
+
+  <?php  
+  $feat_category = get_field('feat_category');
+  $feat_textcontent = get_field('feat_textcontent');
+  if( $feat_textcontent ) { ?>
+  <section class="featured-items-section">
+    <div class="wrapper">
+      <?php if ($feat_category) { ?><div class="category"><?php echo $feat_category ?></div><?php } ?>
+      <div class="textwrap"><?php echo $feat_textcontent ?></div>
+    </div>
+  </section>
+  <?php } ?>
 <?php
 get_footer();

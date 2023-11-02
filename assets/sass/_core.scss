@@ -176,7 +176,7 @@ body {
 }
 
 .intro-section {
-  padding-bottom: 80px;
+  padding-bottom: 130px;
   background-color: $primary;
   position: relative;
   color: #FFF;
@@ -191,8 +191,13 @@ body {
     }
   }
   .videoFrame {
-    margin: 0 0;
+    background-color: #000;
     position: relative;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
     img.resizer {
       width: 100%;
       height: auto;
@@ -262,8 +267,243 @@ body {
   }
   .videoText {
     color: #FFF;
+    .inside {
+      width: 100%;
+    }
+    h2 {
+      position: relative;
+      margin: 0 0 15px;
+      &:after {
+        content:"";
+        display: block;
+        width: 70px;
+        height: 5px;
+        background-color: $secondary;
+        position: relative;
+      }
+    }
   }
   &.half {
+    .flex-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .videoFrame {
+      max-width: unset;
+      width: 40%;
+      padding: 0 0;
+      margin: 0 0;
+    }
+    .videoText {
+      width: 55%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+
+}
+
+body.home #content {
+  position: relative;
+  z-index: 20;
+  background-color: #F3D3B2;
+  color: $primary;
+}
+
+.films-section {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 250px;
+  z-index: 10;
+  &:before {
+    content:"";
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-image: url('images/grass.png');
+    background-position: bottom center;
+    background-repeat: repeat-x;
+    background-size: contain;
+    position: absolute;
+    top: -48px;
+    left: 0;
+  }
+  .forest {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    &:before {
+      content:"";
+      display: block;
+      width: 7vw;
+      height: 7vw;
+      background-image: url('images/bird.png');
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      left: 20vw;
+      bottom: 7vw;
+    }
+    &:after {
+      content:"";
+      display: block;
+      width: 36vw;
+      height: 36vw;
+      background-image: url('images/trees.png');
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      right: 5vw;
+      bottom: -2vw;
+    }
+  }
+  .film-info {
+    margin: 50px 0;
+    .videoFrame {
+      margin: 0 0;
+      position: relative;
+      float: left;
+      background-color: #000;
+      img.resizer {
+        width: 100%;
+        height: auto;
+        float: left;
+      }
+      .videoLink {
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        float: left;
+        cursor: pointer;
+      }
+      .videoImage {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #000;
+        &:before {
+          content:"";
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: rgba(0,0,0,.35);
+        }
+      }
+      .player-button {
+        display: block;
+        width: 80px;
+        height: 80px;
+        border-radius: 500px;
+        border: 2px solid #FFF;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all ease .3s;
+        &:before {
+          content:"";
+          display: inline-block;
+          width: 0;
+          height: 0;
+          border-left: 30px solid #FFF;
+          border-top: 18px solid transparent;
+          border-bottom: 18px solid transparent;
+          position: relative;
+          left: 3px;
+          transition: all ease .3s;
+        }
+      }
+    }
+    .videoLink:hover {
+      .player-button {
+        background-color: rgba(0,0,0,.65);
+      }
+    }
+    .videoText {
+      color: $primary;
+      .inside {
+        width: 100%;
+      }
+    }
+    h2 {
+      position: relative;
+      margin: 0 0 15px;
+      &:after {
+        content:"";
+        display: block;
+        width: 70px;
+        height: 5px;
+        background-color: $secondary;
+        position: relative;
+      }
+    }
+
+    .infotype {
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1.2;
+      color: $secondary;
+    }
+    .infotitle {
+      font-size: 26px;
+      font-weight: bold;
+      line-height: 1.2;
+      margin: 0 0 15px;
+    }
+    .link {
+      margin: 12px 0 0;
+      a {
+        color: $primary;
+        font-weight: bold;
+        display: inline-block;
+        text-decoration: none;
+        position: relative;
+        padding-right: 15px;
+        &:after {
+          content:"";
+          display: block;
+          width: 0;
+          height: 0;
+          border-left: 7px solid $primary;
+          border-top: 5px solid transparent;
+          border-bottom: 5px solid transparent;
+          position: absolute;
+          top: 7px;
+          right: 0;
+          transition: all ease .3s;
+        }
+        &:hover, &:focus {
+          color: $secondary;
+          &:after {
+            border-left-color: $secondary;
+            transform: translateX(3px);
+          }
+        }
+      }
+    }
+
+  }
+
+  .film-info.half {
     .flex-wrap {
       display: flex;
       flex-wrap: wrap;
@@ -278,30 +518,44 @@ body {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      .inside {
-        width: 100%;
-      }
-      h2 {
-        position: relative;
-        margin: 0 0 15px;
-        &:after {
-          content:"";
-          display: block;
-          width: 70px;
-          height: 5px;
-          background-color: $secondary;
-          position: relative;
-        }
-      }
     }
   }
-
 }
 
-body.home #content {
+.featured-items-section {
+  background-color: #1a2614;
   position: relative;
-  z-index: 20;
-  background-color: #F3D3B2;
-  color: $primary;
+  z-index: 25;
+  color: #FFF;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  font-size: 18px;
+  line-height: 1.6;
+  &:before {
+    content:"";
+    display: block;
+    width: 100%;
+    height: 80px;
+    background-image: url('images/grass-dark.png');
+    background-position: bottom center;
+    background-repeat: repeat-x;
+    background-size: contain;
+    position: absolute;
+    top: -75px;
+    left: 0;
+  }
+  .category {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: $secondary;
+    margin-bottom: 20px;
+  }
+  h2 {
+    margin: 0 0 30px;
+  }
 }
+
+
 

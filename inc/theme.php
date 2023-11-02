@@ -34,7 +34,7 @@ function my_login_logo() {
       background-color: #01ccf8;
     }
     body.login {
-      background: linear-gradient(to bottom, #025890 0%,#1163ba 0%,#01cdf9 100%);
+      background: linear-gradient(to bottom, #122304 0%,#172f03 0%,#4b7055 100%);
     }
     body.login form {
       border: none;

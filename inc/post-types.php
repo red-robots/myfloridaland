@@ -84,41 +84,12 @@ function build_taxonomies() {
 
   $post_types = array(
     array(
-      'post_type' => array('team','careers'),
-      'menu_name' => 'Divisions Taxonomy',
-      'plural'    => 'Divisions',
-      'single'    => 'Division',
-      'taxonomy'  => 'divisions'
+      'post_type' => array('films'),
+      'menu_name' => 'Films Categories',
+      'plural'    => 'Films Categories',
+      'single'    => 'Films Category',
+      'taxonomy'  => 'films-categories'
     ),
-    array(
-      'post_type' => array('communities'),
-      'menu_name' => 'Community Status',
-      'plural'    => 'Community Status',
-      'single'    => 'Community Status',
-      'taxonomy'  => 'community-status'
-    ),
-    array(
-      'post_type' => array('communities'),
-      'menu_name' => 'Community Location',
-      'plural'    => 'Community Locations',
-      'single'    => 'Community Location',
-      'taxonomy'  => 'community-location'
-    ),
-    array(
-      'post_type' => array('testimonial'),
-      'menu_name' => 'Testimonial Type',
-      'plural'    => 'Testimonial Types',
-      'single'    => 'Testimonial Type',
-      'taxonomy'  => 'testimonial-types',
-      'default_term' => array('name'=>'Resident','slug'=>'resident')
-    ),
-    array(
-      'post_type' => array('activities'),
-      'menu_name' => 'Activity Types',
-      'plural'    => 'Activity Types',
-      'single'    => 'Activity Type',
-      'taxonomy'  => 'activity-type'
-    )
   );
 
 

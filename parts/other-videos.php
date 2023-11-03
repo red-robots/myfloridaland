@@ -20,6 +20,9 @@
           $video_thumb = get_field('video_thumbnail');
           $video_link = get_field('video_link');
           $video_description = get_field('video_description');
+          if($video_description) {
+            $video_description = shortenText( strip_tags($video_description), 150, ".","...");
+          }
           $section_class = ( $video_thumb  && $video_link && $video_description ) ? 'half':'full';
           $featuredFilms[] = get_the_ID();
           ?>

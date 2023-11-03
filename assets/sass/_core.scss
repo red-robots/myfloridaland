@@ -211,7 +211,6 @@ body {
     }
   }
   .videoFrame {
-    background-color: #000;
     position: relative;
     max-width: 1200px;
     width: 100%;
@@ -229,6 +228,8 @@ body {
       width: 100%;
       float: left;
       cursor: pointer;
+      position: relative;
+      background-color: #000;
     }
     .videoImage {
       display: block;
@@ -467,7 +468,6 @@ body.home #content {
       margin: 0 0;
       position: relative;
       float: left;
-      background-color: #000;
       img.resizer {
         width: 100%;
         height: auto;
@@ -479,6 +479,8 @@ body.home #content {
         width: 100%;
         float: left;
         cursor: pointer;
+        position: relative;
+        background-color: #000;
       }
       .videoImage {
         display: block;

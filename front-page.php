@@ -88,7 +88,7 @@ get_header();
                   <?php if($small_title) { ?>
                     <div class="infotype"><?php echo $small_title ?></div>
                   <?php } ?>
-                    <h3 class="infotitle"><?php echo get_the_title() ?></h3>
+                    <h3 class="infotitle"><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></h3>
                   </div>
                   <div class="infotext">
                     <?php echo $video_description ?>

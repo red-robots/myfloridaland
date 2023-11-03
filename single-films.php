@@ -8,8 +8,9 @@
  */
 
 $placeholder = THEMEURI . 'images/resizer-wide.png';
-$bannerURL = ( has_post_thumbnail() ) ? get_the_post_thumbnail_url() : '';
+$bannerURL = ( has_post_thumbnail() ) ? get_the_post_thumbnail_url() : THEMEURI . '/images/hero-placeholder.png';
 $has_banner = ( has_post_thumbnail() ) ? 'hasbanner':'nobanner';
+
 global $post;
 //$post_terms = array();
 // if( get_post_type()=='post' ) {
@@ -23,13 +24,12 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-      <?php if( has_post_thumbnail() ) { ?>
-        <figure class="post-feat-image" style="background-image:url('<?php echo $bannerURL ?>')">
+      <figure class="post-feat-image" style="background-image:url('<?php echo $bannerURL ?>')">
+        <?php if( has_post_thumbnail() ) { ?>
           <span class="img"><?php the_post_thumbnail(); ?></span>
-          <div class="topgrass"></div>    
-        </figure>
-      <?php } ?>
-
+        <?php } ?>
+        <div class="topgrass"></div>    
+      </figure>
       <?php  
         $small_title = get_field('small_title');
         $video_thumb = get_field('video_thumbnail');

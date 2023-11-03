@@ -520,6 +520,24 @@ body.home #content {
       font-weight: bold;
       line-height: 1.2;
       margin: 0 0 15px;
+      a {
+        color: $primary;
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        &:hover, &:focus {
+          color: $primary;
+          &:after {
+            content:"";
+            display: block;
+            width: 100%;
+            border-bottom: 1px dotted $secondary;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+          }
+        }
+      }
     }
     .link {
       margin: 12px 0 0;
@@ -695,7 +713,7 @@ body.home #content {
 
 .post-feat-image {
   width: 100%;
-  height: 60vh;
+  height: 45vh;
   background-color: $primary;
   position: relative;
   margin: 0 0;
@@ -717,7 +735,7 @@ body.home #content {
     background-size: contain;
   }
   @media screen and (max-width: 1024px) {
-    height: 400px;
+    height: 350px;
   }
 }
 
@@ -726,6 +744,7 @@ body.subpage {
     background-color: #f3d3b2;
     padding-top: 70px;
     padding-bottom: 80px;
+    min-height: 20em;
     .videoText {
       color: $primary;
       .category {

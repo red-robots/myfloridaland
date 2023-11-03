@@ -370,8 +370,7 @@ body.home #content {
     left: 0;
     bottom: 0;
     width: 100%;
-    &:before {
-      content:"";
+    .bird {
       display: block;
       width: 7vw;
       height: 7vw;
@@ -382,6 +381,7 @@ body.home #content {
       position: absolute;
       left: 20vw;
       bottom: 7vw;
+      transform: translate(-60vh, 60vh) rotate(-60deg) scale(0.5);
       @media screen and (min-width: 1400px) {
         width: 120px;
         height: 120px;
@@ -391,9 +391,11 @@ body.home #content {
         height: 70px;
         left: 10vw;
       }
+      &.aos-animate {
+        transform: translate(0) rotate(0) scale(1);
+      }
     }
-    &:after {
-      content:"";
+    .tree {
       display: block;
       width: 35vw;
       height: 35vw;
@@ -414,6 +416,50 @@ body.home #content {
         right: 0;
       }
     }
+    // &:before {
+    //   content:"";
+    //   display: block;
+    //   width: 7vw;
+    //   height: 7vw;
+    //   background-image: url('images/bird.png');
+    //   background-position: bottom center;
+    //   background-repeat: no-repeat;
+    //   background-size: contain;
+    //   position: absolute;
+    //   left: 20vw;
+    //   bottom: 7vw;
+    //   @media screen and (min-width: 1400px) {
+    //     width: 120px;
+    //     height: 120px;
+    //   }
+    //   @media screen and (max-width: 820px) {
+    //     width: 70px;
+    //     height: 70px;
+    //     left: 10vw;
+    //   }
+    // }
+    // &:after {
+    //   content:"";
+    //   display: block;
+    //   width: 35vw;
+    //   height: 35vw;
+    //   background-image: url('images/trees.png');
+    //   background-position: bottom center;
+    //   background-repeat: no-repeat;
+    //   background-size: contain;
+    //   position: absolute;
+    //   right: 5vw;
+    //   bottom: -2vw;
+    //   @media screen and (min-width: 1400px) {
+    //     width: 600px;
+    //     height: 600px;
+    //   }
+    //   @media screen and (max-width: 820px) {
+    //     width: 200px;
+    //     height: 200px;
+    //     right: 0;
+    //   }
+    // }
   }
   .film-info {
     margin: 50px 0;

@@ -102,7 +102,10 @@ get_header();
         <?php endwhile; wp_reset_postdata(); ?>
       </div>
     </div>
-    <div class="forest"></div>
+    <div class="forest">
+      <div class="bird" data-aos="fade-up-right" data-aos-delay="80" data-aos-offset="200" data-aos-duration="1000"></div>
+      <div class="tree" data-aos="fade-up" data-aos-delay="40" data-aos-duration="800"></div>
+    </div>
   </section>
   <?php } ?>
 

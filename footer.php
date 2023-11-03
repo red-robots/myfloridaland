@@ -18,6 +18,10 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+AOS.init();
+</script>
 <?php wp_footer(); ?>
 </body>
 </html>

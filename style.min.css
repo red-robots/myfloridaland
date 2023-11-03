@@ -1543,7 +1543,7 @@ body.subpage .intro-section{background-color:#1a2514;padding-top:70px;padding-bo
 body.subpage .intro-section .videoText{color:#fff}
 body.subpage .intro-section .videoText .category{text-transform:uppercase;font-size:18px;font-weight:bold;line-height:1.2;color:#ff4800}
 body.subpage .intro-section .videoText h1{font-size:2rem;font-weight:500;line-height:1.2;position:relative;margin:0 0 15px;color:#fff}
-body.subpage .films-section{background-color:#f3d3b2;padding-bottom:40px !important}
+body.subpage .films-section{background-color:#f3d3b2;padding-top:30px;padding-bottom:40px}
 body.subpage .forest{display:none !important}
 body.subpage .forest:after{content:"";display:block;width:100%;height:70px;position:absolute;left:0;bottom:0;background-image:url("images/grass-dark.png");background-position:bottom center;background-repeat:repeat-x;background-size:contain}
 body.subpage .site-footer{position:relative;z-index:20}

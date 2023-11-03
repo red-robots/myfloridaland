@@ -92,7 +92,9 @@ get_header();
                   </div>
                   <div class="infotext">
                     <?php echo $video_description ?>
-                    <p class="link"><a href="<?php echo $video_link ?>" class="videopopup" data-fancybox="video">Click to Watch Video</a></p>    
+                    <?php if ($video_link) { ?>
+                      <p class="link"><a href="<?php echo $video_link ?>" class="videopopup" data-fancybox="video">Click to Watch Video</a></p>    
+                    <?php } ?> 
                   </div>
                 </div>
              </div>

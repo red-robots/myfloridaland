@@ -74,6 +74,8 @@ get_header(); ?>
 
 		<?php endwhile; ?>
 
+    <?php get_template_part('parts/other-videos'); ?>
+
 	</main><!-- #main -->
 </div><!-- #primary -->
 

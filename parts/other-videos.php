@@ -1,9 +1,12 @@
-<?php  
+<?php 
+  global $post;
+  $current_id = $post->ID; 
   $perpage = ( get_field('num_items_films') ) ? get_field('num_items_films') : 3;
   $args = array(
     'posts_per_page'  => 3,
     'post_type'       => 'films',
-    'post_status'     => 'publish'
+    'post_status'     => 'publish',
+    'post__not_in'    => array($current_id)
   );
   $films = new WP_Query($args);
   $featuredFilms = array();

@@ -12,6 +12,7 @@ $bannerURL = ( has_post_thumbnail() ) ? get_the_post_thumbnail_url() : THEMEURI 
 $has_banner = ( has_post_thumbnail() ) ? 'hasbanner':'nobanner';
 
 global $post;
+$current_id = $post->ID;
 //$post_terms = array();
 // if( get_post_type()=='post' ) {
 //   $taxonomy = 'category';

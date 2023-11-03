@@ -14,7 +14,7 @@ function js_custom_init() {
         'plural'    => 'Film',
         'single'    => 'Film',
         'menu_icon' => 'dashicons-youtube',
-        'supports'  => array('title')
+        'supports'  => array('title','thumbnail')
       ),
     );
     
@@ -161,29 +161,14 @@ function set_custom_cpt_columns($columns) {
     $query = isset($wp_query->query) ? $wp_query->query : '';
     $post_type = ( isset($query['post_type']) ) ? $query['post_type'] : '';
     
-    if($post_type=='activities') {
+    if($post_type=='films') {
         unset($columns['date']);
-        $columns['title'] = __( 'Name', 'bellaworks' );
-        $columns['image'] = __( 'Image', 'bellaworks' );
-        $columns['date'] = __( 'Date', 'bellaworks' );
-    }
-    else if($post_type=='events') {
-        unset($columns['date']);
+        unset($columns['taxonomy-films-categories']);
         $columns['title'] = __( 'Title', 'bellaworks' );
-        $columns['image'] = __( 'Photo', 'bellaworks' );
+        $columns['featured'] = __( 'Featured', 'bellaworks' );
+        $columns['taxonomy-films-categories'] = __( 'Categories', 'bellaworks' );
         $columns['date'] = __( 'Date', 'bellaworks' );
     }
-    // else if($post_type=='communities') {
-    //     unset($columns['date']);
-    //     unset($columns['taxonomy-community-status']);
-    //     unset($columns['taxonomy-community-location']);
-    //     $columns['title'] = __( 'Name', 'bellaworks' );
-    //     $columns['units'] = __( 'Total Units', 'bellaworks' );
-    //     $columns['taxonomy-community-location'] = __( 'Location', 'bellaworks' );
-    //     $columns['taxonomy-community-status'] = __( 'Category', 'bellaworks' );
-    //     $columns['date'] = __( 'Date', 'bellaworks' );
-    // }
-    
     return $columns;
 }
 
@@ -194,38 +179,19 @@ function custom_post_column( $column, $post_id ) {
     $query = isset($wp_query->query) ? $wp_query->query : '';
     $post_type = ( isset($query['post_type']) ) ? $query['post_type'] : '';
     
-    if($post_type=='activities') {
+    if($post_type=='films') {
         switch ( $column ) {
-          case 'image' :
-            $img = get_field('main_photo',$post_id);
-            $img_src = ($img) ? $img['sizes']['medium'] : '';
-            $the_photo = '<span class="tmphoto" style="display:inline-block;width:50px;height:50px;background:#e2e1e1;text-align:center;border:1px solid #CCC;overflow:hidden;">';
-            if($img_src) {
-               $the_photo .= '<span style="display:block;width:100%;height:100%;background:url('.$img_src.') top center no-repeat;background-size:cover;transform:scale(1.2)"></span>';
+          case 'featured' :
+            $is_featured = get_field('featured',$post_id);
+            if($is_featured=='yes') {
+              echo '<span class="dashicons dashicons-star-filled" style="color:#f1bb0f;position:relative;left:14px;"></span>';
             } else {
-                $the_photo .= '<i class="dashicons dashicons-format-image" style="font-size:25px;position:relative;top:13px;left: -3px;opacity:0.3;"></i>';
+              echo '<span class="dashicons dashicons-star-empty" style="position:relative;left:14px;"></span>';
             }
-            $the_photo .= '</span>';
-            echo $the_photo;
             break;
         }
     }
-    else if($post_type=='events') {
-        switch ( $column ) {
-          case 'image' :
-            $img = get_field('main_photo',$post_id);
-            $img_src = ($img) ? $img['sizes']['medium'] : '';
-            $the_photo = '<span class="tmphoto" style="display:inline-block;width:50px;height:50px;background:#e2e1e1;text-align:center;border:1px solid #CCC;overflow:hidden;">';
-            if($img_src) {
-               $the_photo .= '<span style="display:block;width:100%;height:100%;background:url('.$img_src.') top center no-repeat;background-size:cover;transform:scale(1.2)"></span>';
-            } else {
-                $the_photo .= '<i class="dashicons dashicons-format-image" style="font-size:25px;position:relative;top:13px;left: -3px;opacity:0.3;"></i>';
-            }
-            $the_photo .= '</span>';
-            echo $the_photo;
-            break;
-        }
-    }
+    
     
 }
 

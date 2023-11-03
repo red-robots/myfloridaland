@@ -43,11 +43,19 @@ get_header();
   <?php  
   $perpage = ( get_field('num_items_films') ) ? get_field('num_items_films') : 3;
   $args = array(
-    'posts_per_page'=> $perpage,
-    'post_type'   => 'films',
-    'post_status' => 'publish'
+    'posts_per_page'  => $perpage,
+    'post_type'       => 'films',
+    'post_status'     => 'publish',
+    'meta_query'      =>  array(
+      array(
+        'key'     => 'featured',
+        'compare' => '=',
+        'value'   => 'yes',
+      )
+    )
   );
   $films = new WP_Query($args);
+  $featuredFilms = array();
   if ( $films->have_posts() ) { ?>
   <section class="films-section">
     <div class="wrapper">
@@ -59,6 +67,7 @@ get_header();
           $video_link = get_field('video_link');
           $video_description = get_field('video_description');
           $section_class = ( $video_thumb  && $video_link && $video_description ) ? 'half':'full';
+          $featuredFilms[] = get_the_ID();
           ?>
           <div class="film-info <?php echo $section_class ?>">
             <div class="flex-wrap">
@@ -100,11 +109,42 @@ get_header();
   <?php  
   $feat_category = get_field('feat_category');
   $feat_textcontent = get_field('feat_textcontent');
+  $args2 = array(
+    'posts_per_page'  => 15,
+    'post_type'       => 'films',
+    'post_status'     => 'publish',
+    'meta_query'      =>  array(
+      'relation' => 'OR',
+      array(
+        'key'     => 'featured',
+        'compare' => '=',
+        'value'   => 'no',
+      ),
+      array(
+        'key'     => 'featured',
+        'compare' => 'NOT EXISTS'
+      )
+    )
+  );
+
+  if($featuredFilms) {
+    $args2['post__not_in'] = $featuredFilms;
+  }
+  $posts = new WP_Query($args2);
   if( $feat_textcontent ) { ?>
   <section class="featured-items-section">
     <div class="wrapper">
       <?php if ($feat_category) { ?><div class="category"><?php echo $feat_category ?></div><?php } ?>
       <div class="textwrap"><?php echo $feat_textcontent ?></div>
+      <?php if ( $posts->have_posts() ) { ?>
+      <div class="recent-films">
+        <?php while ( $posts->have_posts() ) : $posts->the_post(); ?>
+          <div class="info">
+            <a href="<?php echo get_permalink() ?>"><?php the_title() ?></a>
+          </div>
+        <?php endwhile; wp_reset_postdata(); ?>
+      </div>
+      <?php } ?>
     </div>
   </section>
   <?php } ?>

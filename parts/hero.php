@@ -16,9 +16,10 @@ if( is_home() || is_front_page() ) {
       </div>
     </div>
     <?php } ?>
-    <div class="topgrass">
-      <img src="<?php echo THEMEURI ?>/images/top-grass.png" alt="">
-    </div>
+    <!-- <div class="topgrass">
+      <img src="<?php //echo THEMEURI ?>/images/top-grass.png" alt="">
+    </div> -->
+    <div class="topgrass" style="background-image:url('<?php echo THEMEURI ?>/images/top-grass.png')"></div>    
   </div>
 
   <?php } ?>

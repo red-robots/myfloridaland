@@ -1,44 +1,75 @@
 <?php
-$bannerImage = get_field('banner_image');
-$hasBanner = ( isset($bannerImage['image1']) && $bannerImage['image1'] ) ? 'hasBanner' : 'noBanner';
-get_header(); 
-?>
+/**
+ * The template for displaying all pages.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ *
+ * @package bellaworks
+ */
 
-<div id="primary" class="content-area-full internalPage generic-layout <?php echo $hasBanner ?>">
-  <main id="main-content" class="main-content">
-  <?php while ( have_posts() ) : the_post(); ?>
+$placeholder = THEMEURI . 'images/resizer-wide.png';
+$bannerURL = ( has_post_thumbnail() ) ? get_the_post_thumbnail_url() : THEMEURI . '/images/hero-placeholder.png';
+$has_banner = ( has_post_thumbnail() ) ? 'hasbanner':'nobanner';
 
-      <?php if ($hasBanner=="noBanner") { ?>
-      <div class="titlediv typical">
-        <h1 class="page-title"><span><?php the_title(); ?></span></h1>
-      </div>
-      <?php } ?>
+global $post;
+$current_id = $post->ID;
+//$post_terms = array();
+// if( get_post_type()=='post' ) {
+//   $taxonomy = 'category';
+//   $post_terms = get_the_terms($post->ID,$taxonomy);
+// }
+get_header(); ?>
 
-      <?php if ( get_the_content() ) { ?>
-      <div class="entry-content"><?php the_content(); ?></div>
-      <?php } ?>
+<div id="primary" class="content-area-full content-default page-default-template <?php echo $has_banner ?>">
+  <main id="main" class="site-main" role="main">
 
-      <?php  
-        $intro_icon = get_field('intro_icon');
-        $intro_text = get_field('intro_text');
-        if($intro_text) { ?>
-        <section class="section section-intro">
-          <div class="wrapper">
-            <?php if ($intro_icon) { ?>
-            <figure class="intro-icon">
-              <img src="<?php echo $intro_icon['url'] ?>" alt="" />
-            </figure>
-            <?php } ?>  
-            <div class="intro-text"><?php echo anti_email_spam($intro_text) ?></div>
+    <?php while ( have_posts() ) : the_post(); ?>
+
+      <figure class="post-feat-image" style="background-image:url('<?php echo $bannerURL ?>')">
+        <?php if( has_post_thumbnail() ) { ?>
+          <span class="img"><?php the_post_thumbnail(); ?></span>
+        <?php } ?>
+        <div class="topgrass"></div>    
+      </figure>
+
+      <div class="intro-section about <?php echo $section_class ?>">
+        <div class="wrapper">
+          <div class="flex-wrap">
+            
+
+           
+             <div class="videoText">
+                <div class="inside">
+                  
+                  <h1 class="post-title"><?php the_title() ?></h1>
+                  
+                </div>
+             </div>
+            
           </div>
-        </section>
-      <?php } ?>  
-    
-  <?php endwhile; ?>
-  </main>
-</div><!-- #primary -->
+        </div>
+      </div>
 
-<?php //get_template_part('parts/steps'); ?>
+      <div class="wrapper content-inner">
+        <div class="post-entry">
+          
+        </div>
+      </div>
+
+      <section class="films-section">
+        <div class="wrapper">
+          <div class="film-info">
+            <?php the_content(); ?>
+          </div>
+        </div>
+      </section>
+
+    <?php endwhile; ?>
+
+    <?php //get_template_part('parts/other-videos'); ?>
+
+  </main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
 get_footer();

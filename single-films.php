@@ -67,7 +67,7 @@ get_header(); ?>
         </div>
       </div>
 
-      <div class="wrapper content-inner">
+      <div class="wrapper content-inner"><!-- this one? -->
         <div class="post-entry">
           <?php the_content(); ?>
         </div>

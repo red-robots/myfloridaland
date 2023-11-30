@@ -9,7 +9,11 @@
 
     <div class="footer-site-info">
       <?php if( get_custom_logo() ) { ?>
-        <div class="footer-logo"><img src="<?php echo $logoImg[0]  ?>" alt="<?php bloginfo('name'); ?> Logo"></div>
+        <div class="footer-logo">
+          <a href="<?php bloginfo('url'); ?>/">
+            <img src="<?php echo $logoImg[0]  ?>" alt="<?php bloginfo('name'); ?> Logo">
+          </a>
+        </div>
       <?php } ?>
       <div class="sitename"><?php bloginfo('name'); ?></div>
      </div>

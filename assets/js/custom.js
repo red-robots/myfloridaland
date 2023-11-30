@@ -5,6 +5,7 @@
  *	Developed by: Lisa DeBona
  *  Date Modified: 05.09.2023
  */
+
 jQuery(document).ready(function ($) {
   /* Slideshow */
   // var swiper = new Swiper('.slideshow', {
@@ -25,13 +26,17 @@ jQuery(document).ready(function ($) {
   //     prevEl: ".swiper-button-prev",
   //   },
   // });
+
   $('#menu-toggle').on('click', function (e) {
     e.preventDefault();
     $(this).toggleClass('active');
     $('body').toggleClass('menu-open');
-  }); // if( $('.intro-section .topgrass').length &&  $('.home-banner') ) {
+  });
+
+  // if( $('.intro-section .topgrass').length &&  $('.home-banner') ) {
   //   $('.intro-section .topgrass').appendTo('.home-banner');
   // }
+
   // $(".videopopup").fancybox({
   //   type: "iframe", //<--added
   //   maxWidth: 800,
@@ -45,6 +50,7 @@ jQuery(document).ready(function ($) {
   //   closeEffect: 'none'
   // });
 
-  Fancybox.bind('[data-fancybox]', {// Custom options
+  Fancybox.bind('[data-fancybox]', {
+    // Custom options
   });
 });

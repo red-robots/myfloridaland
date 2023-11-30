@@ -8,6 +8,7 @@ get_header();
     $intro_videoThumb = get_field('about_video_thumbnail');
     $intro_videoLink = get_field('about_video_url');
     $intro_videoText = get_field('about_intro_text');
+    $page_link = get_field('page_link');
     $intro_class = ( $intro_videoThumb  && $intro_videoLink && $intro_videoText ) ? 'half':'full';
   ?>
     <div class="intro-section <?php echo $intro_class ?>">
@@ -27,6 +28,9 @@ get_header();
            <div class="videoText">
               <div class="inside">
                 <?php echo $intro_videoText ?>
+                <?php if ($page_link) { ?>
+                  <p class="link"><a href="<?php echo $page_link['url'] ?>" class="about-link"><?php echo $page_link['title'] ?></a></p>    
+                <?php } ?>
               </div>
            </div>
           <?php } ?>

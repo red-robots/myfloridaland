@@ -787,14 +787,35 @@ body.home #content {
     height: 350px;
   }
 }
-
+body.page.page-template-default {
+  .intro-section.about {
+    padding: 20px 0 0 0;
+    min-height: 150px;
+    @media screen and (max-width: 820px) {
+      padding: 60px 0 0 0;
+    }
+  }
+}
 body.subpage {
+  .site-header {
+    @media screen and (max-width: 820px) {
+      background-color: #1a2514;
+    }
+  }
+  .post-feat-image {
+    @media screen and (max-width: 820px) {
+      height: 80px;
+    }
+  }
   .intro-section  {
     // background-color: #f3d3b2;
     background-color: #1a2514;
     padding-top: 70px;
     padding-bottom: 120px;
     min-height: 20em;
+    @media screen and (max-width: 1024px) {
+      padding-bottom: 40px;
+    }
     .videoText {
       color: #FFF;
       .category {
@@ -827,6 +848,9 @@ body.subpage {
     background-color: #f3d3b2;
     padding-top: 30px;
     padding-bottom: 40px;
+    @media screen and (max-width: 1024px) {
+      padding-top: 10px;
+    }
   }
   .forest {
     display: none!important;
@@ -849,4 +873,33 @@ body.subpage {
     z-index: 20;
   }
 }
-
+.intro-section {
+  a.about-link {
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    padding: 10px 15px 10px 0;
+    color: #FFF;
+    position: relative;
+    &:after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 5px solid #FFF;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      position: absolute;
+      top: 17px;
+      right: 0;
+      transition: transform ease .3s;
+    }
+    &:hover, &:focus {
+      color: $secondary;
+      &:after {
+        border-left-color: $secondary;
+        transform: translateX(4px);
+      }
+    }
+  }
+}

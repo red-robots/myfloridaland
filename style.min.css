@@ -1344,7 +1344,7 @@ button.swiper-pagination-bullet{border:0;margin:0;padding:0;-webkit-box-shadow:n
 .select2-search--dropdown .select2-search__field::-webkit-search-cancel-button{-webkit-appearance:none}
 .select2-search--dropdown.select2-search--hide{display:none}
 .select2-close-mask{border:0;margin:0;padding:0;display:block;position:fixed;left:0;top:0;min-height:100%;min-width:100%;height:auto;width:auto;opacity:0;z-index:99;background-color:#fff;filter:alpha(opacity=0)}
-.select2-hidden-accessible{border:0 !important;clip:rect(0 0 0 0) !important;-webkit-clip-path:inset(50%) !important;clip-path:inset(50%) !important;height:1px !important;overflow:hidden !important;padding:0 !important;position:absolute !important;width:1px !important;white-space:nowrap !important}
+.select2-hidden-accessible{border:0 !important;clip:rect(0 0 0 0) !important;clip-path:inset(50%) !important;height:1px !important;overflow:hidden !important;padding:0 !important;position:absolute !important;width:1px !important;white-space:nowrap !important}
 .select2-container--default .select2-selection--single{background-color:#fff;border:1px solid #aaa;border-radius:4px}
 .select2-container--default .select2-selection--single .select2-selection__rendered{color:#444;line-height:28px}
 .select2-container--default .select2-selection--single .select2-selection__clear{cursor:pointer;float:right;font-weight:bold;height:26px;margin-right:20px;padding-right:0}
@@ -1438,7 +1438,7 @@ button.swiper-pagination-bullet{border:0;margin:0;padding:0;-webkit-box-shadow:n
 .icon-Money-Egg:before{content:'\0044'}
 .icon-PiggyBank:before{content:'\0045'}
 .icon-User:before{content:'\0046'}
-div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong{overflow-wrap:normal;word-wrap:normal;-ms-word-break:normal;word-break:normal;word-break:normal;-ms-hyphens:none;-webkit-hyphens:none;hyphens:none;page-break-inside:avoid}
+div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong{overflow-wrap:normal;word-wrap:normal;-ms-word-break:normal;word-break:normal;word-break:normal;-ms-hyphens:none;hyphens:none;page-break-inside:avoid}
 *,::before,::after{box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}
 a,input,button,textarea{-webkit-transition:all ease .3s;transition:all ease .3s}
 .sr{display:inline-block;width:0;height:0;overflow:hidden;text-indent:-99em}
@@ -1543,7 +1543,9 @@ body.subpage .site-footer{position:relative;z-index:20}
 .intro-section a.about-link:after{content:"";display:block;width:0;height:0;border-left:5px solid #FFF;border-top:5px solid transparent;border-bottom:5px solid transparent;position:absolute;top:17px;right:0;-webkit-transition:-webkit-transform ease .3s;transition:-webkit-transform ease .3s;transition:transform ease .3s;transition:transform ease .3s,-webkit-transform ease .3s}
 .intro-section a.about-link:hover,.intro-section a.about-link:focus{color:#ff4800}
 .intro-section a.about-link:hover:after,.intro-section a.about-link:focus:after{border-left-color:#ff4800;-webkit-transform:translateX(4px);transform:translateX(4px)}
-@media screen and (min-width:1400px){.films-section{padding-bottom:250px}
+.credit{width:auto;display:inline-block;margin-top:20px;font-size:14px}
+@media(min-width:980px){.credit{width:50%}
+}@media screen and (min-width:1400px){.films-section{padding-bottom:250px}
 .films-section .forest .bird{width:120px;height:120px}
 .films-section .forest .tree{width:600px;height:600px}
 }@media screen and (max-width:1024px){.home-banner{height:450px}

@@ -3,6 +3,7 @@
   <?php
   $custom_logo_id = get_theme_mod( 'custom_logo' );
   $logoImg = ($custom_logo_id) ? wp_get_attachment_image_src($custom_logo_id,'large') : '';
+  $credit = get_field('credit', 'option');
   ?>
 	<footer id="colophon" class="site-footer" role="contentinfo">
    <div class="wrapper">
@@ -15,7 +16,9 @@
           </a>
         </div>
       <?php } ?>
+
       <div class="sitename"><?php bloginfo('name'); ?></div>
+      <div class="credit"><?php echo $credit; ?></div>
      </div>
 
    </div>	

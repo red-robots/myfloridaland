@@ -903,3 +903,12 @@ body.subpage {
     }
   }
 }
+.credit {
+  width: auto;
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 14px;
+  @include mid() {
+    width: 50%;
+  }
+}
